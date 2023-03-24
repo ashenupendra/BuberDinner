@@ -1,9 +1,12 @@
-using BuberDinner.Application.Services.Authentication;
+using BuberDinner.Application;
+using BuberDinner.Insfrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 {
+    builder.Services
+        .AddApplication()
+        .AddInsfrastructure();
     builder.Services.AddControllers();
-    builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
 }
 
 var app = builder.Build();
