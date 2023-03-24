@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 {
     builder.Services
         .AddApplication()
-        .AddInsfrastructure();
+        .AddInsfrastructure(builder.Configuration);
     builder.Services.AddControllers();
 }
 
